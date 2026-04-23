@@ -856,13 +856,13 @@ export default function Page() {
                   glareClassName="bg-white/15"
                   shadowColor="rgba(122, 9, 54, 0.38)"
                 >
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-gradient-to-br from-[#C8195C] via-[#B01652] to-[#8D0F41] p-8 text-white shadow-[0_14px_30px_rgba(200,25,92,0.16)]">
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-gradient-to-br from-[#FEEFF4] via-[#fcdee8] to-[#C8195C] p-8 text-white shadow-[0_14px_30px_rgba(200,25,92,0.16)]">
                     <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_35%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#ffffff29,transparent_35%)]" />
                     <div className="absolute left-6 top-6 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
 
                     <motion.div
-                      className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-sm font-bold text-white backdrop-blur-md"
+                      className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#8D0F41]  bg-white/10 text-sm font-bold text-[#8D0F41] backdrop-blur-md"
                       whileHover={{ scale: 1.08 }}
                       style={{ transform: "translateZ(30px)" }}
                     >
@@ -870,7 +870,7 @@ export default function Page() {
                     </motion.div>
 
                     <motion.div
-                      className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/12 text-white backdrop-blur-md"
+                      className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#C8195C] text-white backdrop-blur-md"
                       whileHover={{ rotate: 8, scale: 1.06 }}
                       style={{ transform: "translateZ(28px)" }}
                     >
@@ -878,14 +878,14 @@ export default function Page() {
                     </motion.div>
 
                     <h3
-                      className="pr-12 text-xl font-bold"
+                      className="pr-12 text-xl font-bold text-[#8D0F41]" 
                       style={{ transform: "translateZ(22px)" }}
                     >
                       {item.title}
                     </h3>
 
                     <p
-                      className="mt-3 flex-1 leading-7 text-white/85"
+                      className="mt-3 flex-1 leading-7 text-[#C8195C] "
                       style={{ transform: "translateZ(16px)" }}
                     >
                       {item.description}
