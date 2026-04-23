@@ -557,171 +557,230 @@ export default function Page() {
         </div>
       </header>
 
-      <section
-        id="inicio"
-        className="relative overflow-hidden bg-gradient-to-br from-[#C8195C] via-[#B01652] to-[#840F3C] px-4 py-12 text-white sm:px-6 lg:px-8 lg:py-20"
+     <section
+  id="inicio"
+  className="relative overflow-hidden bg-gradient-to-br from-[#C8195C] via-[#B01652] to-[#840F3C] px-4 py-12 text-white sm:px-6 lg:px-8 lg:py-20"
+>
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%)]" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.10),transparent_32%)]" />
+  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.12),transparent_40%)]" />
+  <div className="absolute left-[-80px] top-[15%] h-56 w-56 rounded-full border border-white/10 bg-white/5 blur-2xl" />
+  <div className="absolute right-[-100px] top-[10%] h-72 w-72 rounded-full border border-white/10 bg-white/5 blur-3xl" />
+  <div className="absolute bottom-[-120px] left-[10%] h-72 w-72 rounded-full border border-white/10 bg-white/5 blur-3xl" />
+
+  {Array.from({ length: 10 }).map((_, i) => (
+    <motion.span
+      key={i}
+      className="absolute rounded-full bg-white/15"
+      style={{
+        width: i % 2 === 0 ? 6 : 10,
+        height: i % 2 === 0 ? 6 : 10,
+        left: `${8 + i * 8}%`,
+        top: `${12 + (i % 4) * 16}%`,
+      }}
+      animate={{ y: [0, -10, 0], opacity: [0.3, 0.7, 0.3] }}
+      transition={{
+        duration: 3 + i * 0.25,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  ))}
+
+  <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+    <motion.div
+      variants={fadeLeft}
+      initial="hidden"
+      animate="visible"
+      custom={0}
+    >
+      <motion.div
+        className="mb-6 inline-flex rounded-full border border-[#fcbd02] bg-[#fcbd02] px-4 py-2 text-sm font-semibold text-white/95 backdrop-blur-md"
+        initial={{ y: -20 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.10),transparent_32%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.12),transparent_40%)]" />
-        <div className="absolute left-[-80px] top-[15%] h-56 w-56 rounded-full border border-white/10 bg-white/5 blur-2xl" />
-        <div className="absolute right-[-100px] top-[10%] h-72 w-72 rounded-full border border-white/10 bg-white/5 blur-3xl" />
-        <div className="absolute bottom-[-120px] left-[10%] h-72 w-72 rounded-full border border-white/10 bg-white/5 blur-3xl" />
+        Mega Feirão 2026
+      </motion.div>
 
-        {Array.from({ length: 10 }).map((_, i) => (
-          <motion.span
-            key={i}
-            className="absolute rounded-full bg-white/15"
-            style={{
-              width: i % 2 === 0 ? 6 : 10,
-              height: i % 2 === 0 ? 6 : 10,
-              left: `${8 + i * 8}%`,
-              top: `${12 + (i % 4) * 16}%`,
-            }}
-            animate={{ y: [0, -10, 0], opacity: [0.3, 0.7, 0.3] }}
-            transition={{
-              duration: 3 + i * 0.25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+      <motion.h1
+        className="max-w-2xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        Participe do <span className="text-[#fcbd02]">Feirão 2026</span> e
+        verifique ofertas especiais
+      </motion.h1>
+
+      <motion.p
+        className="mt-6 max-w-xl text-lg leading-8 text-white/90 sm:text-xl"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        Descontos que podem chegar a{" "}
+        <strong className="text-[#fcbd02]">97%</strong> para resolver sua
+        situação agora.
+      </motion.p>
+
+      <motion.div
+        className="mt-8"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
+        <WhatsappButton
+          label="Quero Consultar Agora"
+          message="Olá, gostaria de verificar meus descontos!"
+          onClick={handleWhatsappClick}
+          loading={loadingPhone}
+          className="bg-white text-[#C8195C] hover:shadow-[0_0_36px_rgba(255,255,255,0.15)]"
+        />
+      </motion.div>
+
+      {/* MOBILE: imagem entra no lugar das estatísticas */}
+      <motion.div
+        className="mt-8 lg:hidden"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        <motion.div
+          className="relative mx-auto flex max-w-[420px] items-center justify-center"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <div className="absolute inset-0 -z-30 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,transparent_70%)] blur-2xl" />
+          <div className="absolute left-1/2 top-1/2 -z-20 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm" />
+          <div className="absolute bottom-4 left-1/2 -z-10 h-12 w-[72%] -translate-x-1/2 rounded-full bg-black/25 blur-2xl" />
+
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            className="relative z-20 rounded-[28px] border border-white/10 bg-white/8 px-3 pt-3 backdrop-blur-sm"
+          >
+            <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+            <div className="absolute left-8 top-6 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
+            <img
+              src="/smilling2.png"
+              alt="Pessoa sorrindo com desconto"
+              className="relative z-10 w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.32)]"
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      {/* DESKTOP: stats continuam aqui */}
+      <motion.div
+        className="mt-8 hidden grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        {stats.map((item, index) => (
+          <motion.div
+            key={item.label}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 + index * 0.1 }}
+            className="rounded-[24px] border border-white/20 bg-white/10 p-4 text-center backdrop-blur-md"
+          >
+            <div className="text-2xl font-extrabold text-[#fcbd02] sm:text-3xl">
+              {item.value}
+            </div>
+            <div className="mt-1 text-xs font-medium text-white sm:text-sm">
+              {item.label}
+            </div>
+          </motion.div>
         ))}
+      </motion.div>
+    </motion.div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+    <motion.div
+      className="relative"
+      variants={fadeRight}
+      initial="hidden"
+      animate="visible"
+      custom={0.2}
+    >
+      {/* MOBILE: stats entram no lugar da imagem */}
+      <motion.div
+        className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-5 lg:hidden"
+        initial={{ y: 30 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+      >
+        {stats.map((item, index) => (
           <motion.div
-            variants={fadeLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0}
+            key={item.label}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 + index * 0.1 }}
+            className="rounded-[24px] border border-white/20 bg-white/10 p-4 text-center backdrop-blur-md"
           >
-            <motion.div
-              className="mb-6 inline-flex rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-semibold text-white/95 backdrop-blur-md"
-              initial={{ y: -20 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Mega Feirão 2026
-            </motion.div>
-
-            <motion.h1
-              className="max-w-2xl text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl"
-              initial={{ y: 30 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-            >
-              Participe do <span className="text-[#FFD5E5]">Feirão 2026</span> e
-              verifique ofertas especiais
-            </motion.h1>
-
-            <motion.p
-              className="mt-6 max-w-xl text-lg leading-8 text-white/90 sm:text-xl"
-              initial={{ y: 30 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              Descontos que podem chegar a <strong>97%</strong> para resolver sua
-              situação agora.
-            </motion.p>
-
-            <motion.div
-              className="mt-8"
-              initial={{ y: 30 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-            >
-              <WhatsappButton
-                label="Quero Consultar Agora"
-                message="Olá, gostaria de verificar meus descontos!"
-                onClick={handleWhatsappClick}
-                loading={loadingPhone}
-                className="bg-white text-[#C8195C] hover:shadow-[0_0_36px_rgba(255,255,255,0.15)]"
-              />
-            </motion.div>
-
-            <motion.div
-              className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-5"
-              initial={{ y: 30 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              {stats.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ y: 20 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.45 + index * 0.1 }}
-                  className="rounded-[24px] border border-white/20 bg-white/10 p-4 text-center backdrop-blur-md"
-                >
-                  <div className="text-2xl font-extrabold text-white sm:text-3xl">
-                    {item.value}
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-white/80 sm:text-sm">
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+            <div className="text-2xl font-extrabold text-[#fcbd02] sm:text-3xl">
+              {item.value}
+            </div>
+            <div className="mt-1 text-xs font-medium text-white sm:text-sm">
+              {item.label}
+            </div>
           </motion.div>
+        ))}
+      </motion.div>
 
-          <motion.div
-            className="relative"
-            variants={fadeRight}
-            initial="hidden"
-            animate="visible"
-            custom={0.2}
-          >
-            <motion.div
-              className="relative mx-auto flex max-w-[560px] items-center justify-center"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="absolute inset-0 -z-30 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,transparent_70%)] blur-2xl" />
-              <div className="absolute left-1/2 top-1/2 -z-20 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm" />
-              <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-              <div className="absolute left-1/2 top-1/2 -z-10 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
+      {/* DESKTOP: imagem continua aqui */}
+      <motion.div
+        className="relative mx-auto hidden max-w-[560px] items-center justify-center lg:flex"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="absolute inset-0 -z-30 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.08)_35%,transparent_70%)] blur-2xl" />
+        <div className="absolute left-1/2 top-1/2 -z-20 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm" />
+        <div className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+        <div className="absolute left-1/2 top-1/2 -z-10 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
 
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
-                className="absolute -left-4 top-12 hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md md:block"
-              >
-                98% satisfação
-              </motion.div>
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+          className="absolute -left-4 top-12 hidden rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md md:block"
+        >
+          <strong className="text-[#fcbd02]">98%</strong> satisfação
+        </motion.div>
 
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-2 bottom-16 hidden rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md md:block"
-              >
-                1.000.000+ atendimentos
-              </motion.div>
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -right-2 bottom-16 hidden rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md md:block"
+        >
+          <strong className="text-[#fcbd02]">1.000.000+</strong> atendimentos
+        </motion.div>
 
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-4 top-1/2 hidden rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md lg:block"
-              >
-                12+ anos de experiência
-              </motion.div>
+        <motion.div
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-4 top-1/2 hidden rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-white/90 shadow-lg backdrop-blur-md lg:block"
+        >
+          <strong className="text-[#fcbd02]">12+</strong> anos de experiência
+        </motion.div>
 
-              <div className="absolute bottom-4 left-1/2 -z-10 h-14 w-[72%] -translate-x-1/2 rounded-full bg-black/25 blur-2xl" />
+        <div className="absolute bottom-4 left-1/2 -z-10 h-14 w-[72%] -translate-x-1/2 rounded-full bg-black/25 blur-2xl" />
 
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="relative z-20 rounded-[32px] border border-white/10 bg-white/8 px-4 pt-4 backdrop-blur-sm"
-              >
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-                <div className="absolute left-8 top-6 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
-                <img
-                  src="/smilling2.png"
-                  alt="Pessoa sorrindo com desconto"
-                  className="relative z-10 w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.32)]"
-                />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          className="relative z-20 rounded-[32px] border border-white/10 bg-white/8 px-4 pt-4 backdrop-blur-sm"
+        >
+          <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+          <div className="absolute left-8 top-6 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
+          <img
+            src="/smilling2.png"
+            alt="Pessoa sorrindo com desconto"
+            className="relative z-10 w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.32)]"
+          />
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
       <section className="bg-gradient-to-b from-white to-[#FFF7FA] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
