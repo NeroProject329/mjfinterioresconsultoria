@@ -557,7 +557,7 @@ export default function Page() {
         </div>
       </header>
 
-     <section
+      <section
   id="inicio"
   className="relative overflow-hidden bg-gradient-to-br from-[#C8195C] via-[#B01652] to-[#840F3C] px-4 py-12 text-white sm:px-6 lg:px-8 lg:py-20"
 >
@@ -994,11 +994,11 @@ export default function Page() {
       >
         <div className="mx-auto max-w-7xl">
           <Reveal delay={0.1}>
-            <div className="mb-14 rounded-[32px] bg-gradient-to-br from-[#C8195C] via-[#B01652] to-[#8D0F41] px-6 py-10 text-center shadow-[0_25px_60px_rgba(200,25,92,0.22)] sm:px-10">
+            <div className="mb-14 rounded-[32px] bg-white px-6 py-10 text-center shadow-[0_25px_60px_rgba(200,25,92,0.22)] text-[#C8195C] sm:px-10">
               <h3 className="text-2xl font-bold sm:text-4xl">
                 Preparado para Revolucionar sua Organização?
               </h3>
-              <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/90 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-3xl text-base leading-8  sm:text-lg text-[#C8195C]">
                 Faça contato agora mesmo e descubra como podemos auxiliá-lo a
                 conquistar suas metas
               </p>
@@ -1008,7 +1008,7 @@ export default function Page() {
                   message="Olá, gostaria de verificar meus descontos!"
                   onClick={handleWhatsappClick}
                   loading={loadingPhone}
-                  className="bg-white text-[#C8195C] hover:shadow-[0_0_36px_rgba(255,255,255,0.15)]"
+                  className="bg-[#C8195C] text-white hover:shadow-[0_0_36px_rgba(255,255,255,0.15)]"
                 />
               </div>
             </div>
