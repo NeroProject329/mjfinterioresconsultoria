@@ -456,7 +456,7 @@ export default function Page() {
   useEffect(() => {
     const cookieChoice = localStorage.getItem("cookie-consent");
     if (!cookieChoice) {
-      setShowCookieBanner(true);
+      setShowCookieBanner(false);
     }
 
     const fetchPhone = async () => {
@@ -662,7 +662,7 @@ export default function Page() {
             <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
             <div className="absolute left-8 top-6 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
             <img
-              src="/smilling2.png"
+              src="/123.webp"
               alt="Pessoa sorrindo com desconto"
               className="relative z-10 w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.32)]"
             />
@@ -772,7 +772,7 @@ export default function Page() {
           <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
           <div className="absolute left-8 top-6 h-16 w-16 rounded-full bg-white/10 blur-2xl" />
           <img
-            src="/smilling2.png"
+            src="/123.webp"
             alt="Pessoa sorrindo com desconto"
             className="relative z-10 w-full object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.32)]"
           />
