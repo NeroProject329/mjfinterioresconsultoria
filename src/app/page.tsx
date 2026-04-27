@@ -856,7 +856,7 @@ export default function Page() {
                   glareClassName="bg-white/15"
                   shadowColor="rgba(122, 9, 54, 0.38)"
                 >
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-gradient-to-br from-[#FEEFF4] via-[#fcdee8] to-[#C8195C] p-8 text-white shadow-[0_14px_30px_rgba(200,25,92,0.16)]">
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-[28px] border border-white/15 bg-[#FEEFF4] p-8 text-white shadow-[0_14px_30px_rgba(200,25,92,0.16)]">
                     <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent" />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#ffffff29,transparent_35%)]" />
                     <div className="absolute left-6 top-6 h-24 w-24 rounded-full bg-white/10 blur-2xl" />
