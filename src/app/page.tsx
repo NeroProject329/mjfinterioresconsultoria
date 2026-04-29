@@ -1051,25 +1051,20 @@ export default function Page() {
               </div>
 
               <div>
-                <h4 className="text-lg font-bold">Políticas</h4>
-                <ul className="mt-4 space-y-2 text-white/80">
-                  <li>
-                    <a href="/politica-de-privacidade" className="transition hover:text-white">
-                      Privacidade
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/termos-de-uso" className="transition hover:text-white">
-                      Termos de Uso
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/politica-de-cookies" className="transition hover:text-white">
-                      Cookies
-                    </a>
-                  </li>
-                </ul>
-              </div>
+  <h4 className="text-lg font-bold">Políticas</h4>
+  <ul className="mt-4 space-y-2 text-white/80">
+    <li>
+      <a href="/politica-de-privacidade" className="transition hover:text-white">
+        Política de Privacidade
+      </a>
+    </li>
+    <li>
+      <a href="/termos-de-uso" className="transition hover:text-white">
+        Termos de Uso
+      </a>
+    </li>
+  </ul>
+</div>
             </div>
           </Reveal>
 
